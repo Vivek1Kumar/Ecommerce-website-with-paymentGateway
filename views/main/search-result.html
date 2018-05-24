@@ -1,0 +1,24 @@
+<% layout('layout') -%>
+
+<% if(data.length === 0) { %>
+ <% }else {%>
+<div class="container">
+	<div class="row">
+		_source
+		<% for(var i = 0; i < products.length; i++){ %>
+			<div class="col-md-4">
+				<a href="/product/<%= data[i]._source._id %>">
+					<div class="thumbnail">
+					    <img src="<%= data[i]._source.image %>"
+						<div class="caption">
+							<p><%= data[i]._source.name %></p>
+							<p><%= data[i].Category._source.name %></p>
+							<p>$<%= data[i]._source.price %></p>
+						</div>
+					</div>
+				</a>
+			</div>
+		<%}%>
+	</div>
+</div>
+<% } %>

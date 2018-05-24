@@ -1,0 +1,23 @@
+<%- layout('layout') -%>
+<div class="container">
+
+	<div class="row">
+ 		<div class="col-md-6">
+			<h3>User profile detail</h3>
+			<img class="img-circle img-responsive img-center" src="https://gravatar.com/avatar/?s%27" alt="">
+			<br/>
+			<span>Name: <%= user.profile.name %></span><br/>
+			<span>Email: <%= user.email %></span><br/> 
+
+			<% if(user.address === "" || typeof user.address === 'undefined'){%> 
+			<span> Address: <span style="color: #c0392b; font-weight: bold">You have no address</span></span>
+
+			<%}else{%> 
+			<span> Address: <%= user.address %></span>
+			<% } %>
+			<br/><br/>
+			<a href="/edit-profile" class="btn btn-primary btn-md">Edit profile</a>
+		</div>
+
+	</div>
+</div>
