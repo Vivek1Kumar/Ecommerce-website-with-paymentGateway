@@ -5,7 +5,7 @@ var Product = require('../models/product');
 
 Product.createMapping(function(err, mapping){
 	if(err) {
-		console.log('Error creating mapping');
+		console.log('Error creating mapping...');
 		console.log(err);
 	}else{
 		console.log("mapping created");
